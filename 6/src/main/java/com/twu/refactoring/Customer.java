@@ -13,9 +13,10 @@ public class Customer {
 	private static final int CHILDREN_OFFSET = 3;
 	private static final double NEW_RELEASE_FACTOR = 3;
 	private static final double REGULAR_CHILDREN_FACTOR = 1.5;
-	
+
+	private static final String HEADER = "Rental Record for %s\n";
 	private static final String FIGURE = "\t%s\t%.1f\n";
-	private static final String FOOTER = "Amount owed is %.1f\nYou earned %d frequent renter points";
+	private static final String STATEMENT_FOOTER = "Amount owed is %.1f\nYou earned %d frequent renter points";
 
 	public Customer(String name) {
 		this.name = name;
@@ -33,7 +34,7 @@ public class Customer {
 		double totalAmount = 0;
 		int frequentRenterPoints = 0;
 		Iterator<Rental> rentals = rentalList.iterator();
-		String result = "Rental Record for " + getName() + "\n";
+		String result = String.format(HEADER,getName());
 		while (rentals.hasNext()) {
 			double thisAmount = 0;
 			Rental each = rentals.next();
@@ -53,7 +54,7 @@ public class Customer {
 
 		}
 		// add footer lines
-		result += String.format(FOOTER, totalAmount, frequentRenterPoints);
+		result += String.format(STATEMENT_FOOTER, totalAmount, frequentRenterPoints);
 		return result;
 	}
 
