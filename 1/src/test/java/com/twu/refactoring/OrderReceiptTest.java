@@ -1,7 +1,6 @@
 package com.twu.refactoring;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.containsString;
