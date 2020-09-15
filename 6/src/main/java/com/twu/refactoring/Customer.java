@@ -13,8 +13,7 @@ public class Customer {
 	private static final int CHILDREN_OFFSET = 3;
 	private static final double NEW_RELEASE_FACTOR = 3;
 	private static final double REGULAR_CHILDREN_FACTOR = 1.5;
-
-	private static final String HEADER = "Rental Record for %s\n";
+	
 	private static final String FIGURE = "\t%s\t%.1f\n";
 	private static final String FOOTER = "Amount owed is %.1f\nYou earned %d frequent renter points";
 
